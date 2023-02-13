@@ -1,12 +1,22 @@
 {
-  "5469:3176": {
-    "name": "arrow-down-right",
-    "id": "5469:3176",
-    "key": "",
-    "file": "gTaV6nOPiDx0F3c7WHPME3",
+  "11:2": {
+    "name": "award",
+    "id": "11:2",
+    "key": "b8d57dd28089866a35f74e7f512dbd8ae08ba24f",
+    "file": "M7jZWxLKIVMF1ZVLq89FzA",
     "description": "",
     "width": 24,
     "height": 24,
-    "image": "https://s3-us-west-2.amazonaws.com/figma-alpha-api/img/933b/c047/5997fbdb95b9d46bdd0fc48aac42560d"
+    "image": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/cbf65fd1-759e-4432-a975-1d24f90f5a02"
+  },
+  "22:23": {
+    "name": "cloud-drizzle",
+    "id": "22:23",
+    "key": "741efd48f8218fcfd0a7088d19e9e2f407d83723",
+    "file": "M7jZWxLKIVMF1ZVLq89FzA",
+    "description": "",
+    "width": 24,
+    "height": 24,
+    "image": "https://figma-alpha-api.s3.us-west-2.amazonaws.com/images/00604137-f54f-4dd2-952c-92cbecf013e7"
   }
 }

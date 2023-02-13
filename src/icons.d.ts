@@ -7,4 +7,5 @@
   }
 
   type Icon = ComponentType<Props>;
-  export const ArrowDownRight: Icon;
+  export const Award: Icon;
+export const CloudDrizzle: Icon;
