@@ -1,0 +1,29 @@
+name: icon-publish
+on:
+  push:
+    branches:
+    - main
+    # file paths to consider in the event. Optional; defaults to all.
+
+jobs:
+  icon_deploy:
+    name: figma icon automation
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - run: yarn install
+    - run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_AUTH_TOKEN }}" > ~/.npmrc
+    - run: yarn publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    - run: yarn build
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v1.2.5
+      with:
+        build_dir: docs
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
