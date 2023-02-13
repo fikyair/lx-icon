@@ -1,11 +1,16 @@
 name: icon-automation
 on:
-  push:
+  # push:
+  #   branches:
+  #   - main
+  #   # file paths to consider in the event. Optional; defaults to all.
+  #   paths:
+  #     - package.json
+  pull_request:
+    types:
+      - opened
     branches:
-    - main
-    # file paths to consider in the event. Optional; defaults to all.
-    paths:
-      - package.json
+      - main
 
 jobs:
   icon_automation:
