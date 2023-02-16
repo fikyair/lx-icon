@@ -8,6 +8,7 @@ const pinyin = require("tiny-pinyin");
 require("dotenv").config();
 const {FIGMA_TOKEN, FIGMA_FILE_URL} = process.env;
 
+
 const options = {
   format: "svg",
   outputDir: "./src/",
@@ -52,7 +53,7 @@ client
   .file(fileId)
 
   .then(({data}) => {
-    console.log("Processing response");
+    console.log("Processing response...");
     const components = {};
 
     function check(c) {
@@ -75,7 +76,11 @@ client
         c.children.forEach(check);
       }
     }
-
+    writeFile(
+      resolve(options.outputDir, "figmadocument.json"),
+      JSON.stringify(data.document.children),
+      "utf8"
+    )
     data.document.children.forEach(check);
     if (Object.values(components).length === 0) {
       throw Error("No components found!");
