@@ -6,7 +6,7 @@ export { default as TianjiaXian } from './icons/tianjia_xian';
 export { default as JianshaoXian } from './icons/jianshao_xian';
 export { default as WendangPpt } from './icons/wendang_PPT';
 export { default as WendangXls } from './icons/wendang_xls';
-export { default as Component1 } from './icons/Component 1';
+export { default as Component1 } from './icons/Component1';
 export { default as WendangKey } from './icons/wendang_key';
 export { default as WendangPdf } from './icons/wendang_PDF';
 export { default as WendangMp4 } from './icons/wendang_MP4';

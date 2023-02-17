@@ -3,6 +3,9 @@ import styled from "styled-components";
 import * as icons from "./icons";
 import Header from "./components/Header";
 import IconWrapper from "./components/IconWrapper";
+import {CopyToClipboard} from "react-copy-to-clipboard";
+import {message, Button} from "antd";
+import "antd/dist/reset.css";
 
 const Container = styled.ul`
   display: grid;
@@ -10,44 +13,38 @@ const Container = styled.ul`
   justify-items: stretch;
   align-items: stretch;
   margin: 0;
-  padding: 0 0 50px 0;
+  padding: 50px;
   list-style: none;
 `;
 
-class List extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header />
-        <Container>
-          {Object.keys(icons).map((key, index) => {
-            const Icon = icons[key];
-            return (
+const List = () => {
+  const handleCopyIcon = (text, result) => {
+    if (result) {
+      message.success(text);
+    } else {
+      message.error("fail~");
+    }
+  };
+  return (
+    <div>
+      <Header />
+      <Container>
+        {Object.keys(icons).map((key, index) => {
+          const Icon = icons[key];
+          return (
+            <CopyToClipboard text={`<${key} />`} onCopy={handleCopyIcon}>
               <li key={index}>
                 <IconWrapper>
                   <Icon />
-                  <span onDoubleClick={() => handleCopyIcon(key)}>{key}</span>
+                  <span>{key}</span>
                 </IconWrapper>
               </li>
-            );
-          })}
-        </Container>
-      </div>
-    );
-  }
-}
-
-// copy icon
-function handleCopyIcon(str) {
-  const el = document.createElement("textarea");
-  el.value = str;
-  el.setAttribute("readonly", "");
-  el.style.position = "absolute";
-  el.style.left = "-9999px";
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand("copy");
-  document.body.removeChild(el);
-}
+            </CopyToClipboard>
+          );
+        })}
+      </Container>
+    </div>
+  );
+};
 
 export default List;

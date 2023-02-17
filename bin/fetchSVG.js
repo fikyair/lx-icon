@@ -108,8 +108,9 @@ client
   .then((fcomponents) => {
     for (const item of Object.values(fcomponents)) {
       const _name = item.name.split("_").join();
+      item.cName = item.name;
       const convertName = pinyin.convertToPinyin(_name, "", true);
-      item.name = convertName.replace(/,/g, "_");
+      item.name = convertName.replace(/\s*/g,"").replace(/,/g, "_");
     }
     const components = uniqueFunc(Object.values(fcomponents), "name");
     return ensureDir(join(options.outputDir))
