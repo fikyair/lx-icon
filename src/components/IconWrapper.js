@@ -5,17 +5,18 @@ const IconWrapper = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
   cursor: pointer;
   width: 100%;
 	transition: transform .6s;
+  padding-bottom: 25px;
+  color: #7A8599;
   svg{
     margin: 36px;
   }
   &:hover{
     background: #F6F7FA;
     border-radius: 5px;
-    transform: scale(1.5);
+    transform: scale(1.3);
   }
 `
 
