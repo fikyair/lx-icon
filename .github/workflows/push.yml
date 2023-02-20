@@ -11,6 +11,9 @@ jobs:
   icon_automation:
     name: figma icon automation
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.22]
     steps:
     - uses: actions/checkout@v1
 
