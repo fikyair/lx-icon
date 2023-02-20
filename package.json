@@ -1,6 +1,6 @@
 {
   "name": "lx-icon",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "description": "Icon automation workflow with Figma",
   "main": "dist/lx-icon.cjs.js",
   "module": "dist/lx-icon.esm.js",
