@@ -1,5 +1,3 @@
-# Icon Automation Workflow Using Figma
-
 ## Development
 Create a `.env` in the root directory. Put your Figma file url and Figma token inside.
 
