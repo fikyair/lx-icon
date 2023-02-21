@@ -91,7 +91,7 @@ client
     return components;
   })
   .then((components) => {
-    console.log("Getting export urls");
+    console.log("Getting export urls...");
     return client
       .fileImages(fileId, {
         format: options.format,
@@ -106,6 +106,7 @@ client
       });
   })
   .then((fcomponents) => {
+    console.log('processing fcomponents...')
     for (const item of Object.values(fcomponents)) {
       const _name = item.name.split("_").join();
       item.cName = item.name;
@@ -124,6 +125,7 @@ client
       .then(() => components);
   })
   .then((components) => {
+    console.log('transform to svg...');
     const contentTypes = {
       svg: "image/svg+xml",
       png: "image/png",
@@ -159,7 +161,7 @@ client
   });
 
 function queueTasks(tasks, options) {
-  const queue = new PQueue(Object.assign({concurrency: 3}, options));
+  const queue = new PQueue(Object.assign({concurrency: 5}, options));
   for (const task of tasks) {
     queue.add(task);
   }

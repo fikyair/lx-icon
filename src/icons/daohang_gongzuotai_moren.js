@@ -1,0 +1,20 @@
+import React from 'react';
+
+const DaohangGongzuotaiMoren = () => {
+  return (
+    <svg width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="6.25" height="6.25" rx="1" fill="#3F465C" />
+      <rect x="1" y="8.75" width="6.25" height="6.25" rx="1" fill="#3F465C" />
+      <rect x="8.75" y="1" width="6.25" height="6.25" rx="1" fill="#3F465C" />
+      <rect
+        x="8.75"
+        y="8.75"
+        width="6.25"
+        height="6.25"
+        rx="1"
+        fill="#3F465C"
+      />
+    </svg>
+  );
+};
+export default DaohangGongzuotaiMoren;

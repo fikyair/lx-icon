@@ -68,6 +68,12 @@ const generateIconCode = async ({name}) => {
   const svgCode = await processSvg(code)
   const ComponentName = names.componentName
   const element = getElementCode(ComponentName, attrsToString(getAttrs(names.style), names.style), svgCode)
+  if(ComponentName=== 'TongyongCuowutishiMian') {
+    console.log('----------------------------')
+    console.log('code: ', code);
+    console.log('svgCode: ', svgCode);
+    console.log('element: ', element);
+  }
   const component = format({
     text: element,
     eslintConfig: {
